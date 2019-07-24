@@ -188,3 +188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f770aa2eff79b4148b474a323d641770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackPrefab: {fileID: 3648521139186694778, guid: c23a2cbd308f8644c806a20637938c27,
+    type: 3}
+  speed: 20
