@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rigidbody2D;
+    private Rigidbody2D rigidbody2d;
 
     [SerializeField]
     private float speed; 
@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rigidbody2d = GetComponent<Rigidbody2D>();
 
     }
 
@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
         direction.Normalize();
 
-        rigidbody2D.velocity = direction * speed;
+        GetComponent<Rigidbody2D>().velocity = direction * speed;
 ;
 
     }
