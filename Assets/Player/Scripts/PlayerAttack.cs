@@ -25,7 +25,6 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) 
         {
 
-            Debug.Log(mousePosition);
             Debug.DrawLine(playerPosition, mousePosition, Color.red, 2.5f);
 
             Vector2 direction = mousePosition - playerPosition;
@@ -37,8 +36,6 @@ public class PlayerAttack : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
             Quaternion rotation = Quaternion.Euler(0f,0f, angle);
-
-            Debug.Log(angle);
 
             GameObject attack = Instantiate(attackPrefab, attackBornLocation, rotation);
 

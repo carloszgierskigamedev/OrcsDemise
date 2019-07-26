@@ -5,6 +5,8 @@ using UnityEngine;
 public class CameraBehaviour : MonoBehaviour
 {
 
+    private new Camera camera;
+
     private PlayerMovement playerMovement;
     private float snapSpeed = 7f;
 
@@ -20,13 +22,20 @@ public class CameraBehaviour : MonoBehaviour
 
     void Awake()
     {
+        camera = GetComponent<Camera>();
+    }
+
+    void Start()
+    {
         playerMovement = GameObject.FindObjectOfType<PlayerMovement>();
         snapSpeed = playerMovement.Speed * .9f;
     }
 
     void LateUpdate()
     {
-        transform.position = Vector3.MoveTowards(transform.position, TargetPosition, snapSpeed);
+        if(playerMovement != null) {
+            transform.position = TargetPosition;
+        }
     }
 
 }

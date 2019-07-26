@@ -34,6 +34,8 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
 
+        if(playerMovement == null) return;
+
         enemyPosition = transform.position;
         playerPosition = playerMovement.transform.position;
 

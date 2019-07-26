@@ -18,6 +18,8 @@ public class PlayerHealth : MonoBehaviour
     PlayerAttack playerAttack;
     Vector3 playerPosition;
     
+    public float TotalHealthPoints { get { return totalHealthPoints; } }
+    public float CurrentHealthPoints { get { return currentHealthPoints; } }
 
     void Awake()
     {
@@ -41,7 +43,6 @@ public class PlayerHealth : MonoBehaviour
     public void DealDamage(float attackDamage, Vector3 enemyPosition)
     {
         currentHealthPoints -= attackDamage;
-        Debug.Log(currentHealthPoints);
         StartCoroutine(FreezeMovementAndAttack(enemyPosition));
 
         if (currentHealthPoints <= 0) 
