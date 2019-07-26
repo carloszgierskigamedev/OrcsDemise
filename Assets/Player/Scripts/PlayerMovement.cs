@@ -26,8 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
         direction.Normalize();
 
-        GetComponent<Rigidbody2D>().velocity = direction * speed;
-;
+        rigidbody2d.velocity = direction * speed;
 
     }
 

@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
     private float spawnPointY;
     private Vector2 spawnPosition;
 
-    void Start()
+    void Awake()
     {
         StartCoroutine(Spawn());
     }

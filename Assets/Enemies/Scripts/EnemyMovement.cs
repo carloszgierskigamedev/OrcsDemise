@@ -40,8 +40,6 @@ public class EnemyMovement : MonoBehaviour
         direction = playerPosition - enemyPosition;
         direction.Normalize();
 
-        Debug.Log(direction);
-
     }
 
     void FixedUpdate()

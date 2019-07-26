@@ -5,8 +5,6 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
 
-
-
     [SerializeField]
     private float totalHealthPoints;
     private float currentHealthPoints;
@@ -22,24 +20,17 @@ public class EnemyHealth : MonoBehaviour
 
     }
 
-    void OnCollisionEnter2D (Collision2D col) 
+    public void DealDamage(float attackDamage)
     {
+        currentHealthPoints -= attackDamage;
 
-        if (col.gameObject.tag.Equals("Projectile"))
+        if (currentHealthPoints <= 0) 
         {
 
-            currentHealthPoints -= 20;
-
-            if (currentHealthPoints <= 0) 
-            {
-
-                Destroy(this.gameObject);
-
-            }
+            Destroy(this.gameObject);
 
         }
 
     }
-
 
 }

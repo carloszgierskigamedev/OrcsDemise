@@ -4,21 +4,30 @@ using UnityEngine;
 
 public class ProjectileCollision : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    [SerializeField]
+    private float attackDamage;
+
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
-        void OnCollisionEnter2D(Collision2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
+        EnemyHealth enemyHealth = col.gameObject.GetComponent<EnemyHealth>();
+
+        if (enemyHealth != null)
+        {
+            enemyHealth.DealDamage(attackDamage);
+        }
 
         Destroy(this.gameObject);
 
     }
+
 }
