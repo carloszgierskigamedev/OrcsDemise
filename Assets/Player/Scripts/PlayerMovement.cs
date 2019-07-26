@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private float speed; 
-
+    public float Speed { get { return speed; } }
 
     void Awake()
     {
