@@ -19,12 +19,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Update()
     {
-        if (currentHealthPoints <= 0) 
-        {
 
-            Destroy(this.gameObject);
-
-        }
     }
 
     void OnCollisionEnter2D (Collision2D col) 
@@ -34,6 +29,13 @@ public class EnemyHealth : MonoBehaviour
         {
 
             currentHealthPoints -= 20;
+
+            if (currentHealthPoints <= 0) 
+            {
+
+                Destroy(this.gameObject);
+
+            }
 
         }
 
