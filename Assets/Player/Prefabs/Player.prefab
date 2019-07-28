@@ -70,9 +70,9 @@ SpriteRenderer:
   m_SortingLayerID: -1134238021
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3973664656044319341, guid: 655e6f33a8f2f234bb09cd1834b3d457,
+  m_Sprite: {fileID: -2163810474871045779, guid: 655e6f33a8f2f234bb09cd1834b3d457,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9349057, b: 0.6745283, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -183,6 +183,7 @@ MonoBehaviour:
   attackPrefab: {fileID: 3648521139186694778, guid: c23a2cbd308f8644c806a20637938c27,
     type: 3}
   speed: 20
+  cooldown: 0.5
 --- !u!114 &1056813462927939205
 MonoBehaviour:
   m_ObjectHideFlags: 0

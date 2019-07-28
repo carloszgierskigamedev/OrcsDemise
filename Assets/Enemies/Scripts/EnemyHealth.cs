@@ -9,6 +9,8 @@ public class EnemyHealth : MonoBehaviour
     private float totalHealthPoints;
     [SerializeField]
     private GameObject coinPrefab;
+    [SerializeField]
+    private GameObject bonePrefab;
     private float currentHealthPoints;
 
     private SpriteRenderer spriteRenderer;
@@ -44,16 +46,10 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealthPoints <= 0) 
         {
 
-            coinsToSpawn = Random.Range(0,4);
+            SpawnCoins();
+            SpawnBones();
             
             Destroy(this.gameObject);
-            
-            for (int i = 0; i < coinsToSpawn; i++) 
-            {
-               
-                GameObject coins = Instantiate(coinPrefab,transform.position, Quaternion.identity);
-            
-            }
         }
         else
         {
@@ -62,6 +58,30 @@ public class EnemyHealth : MonoBehaviour
 
         }
 
+    }
+
+    void SpawnCoins()
+    {
+        coinsToSpawn = Random.Range(0,4);
+        
+        for (int i = 0; i < coinsToSpawn; i++) 
+        {
+            
+            GameObject coins = Instantiate(coinPrefab,transform.position, Quaternion.identity);
+        
+        }
+    }
+
+    void SpawnBones()
+    {
+        int bonesAmount = Random.Range(3, 5);
+        
+        for (int i = 0; i < bonesAmount; i++) 
+        {
+            
+            Instantiate(bonePrefab, transform.position, Quaternion.identity);
+        
+        }
     }
 
     IEnumerator DamageDisplayCycle()

@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6897552954196723583}
   - component: {fileID: 6897552954196723552}
-  - component: {fileID: 6897552954196723553}
+  - component: {fileID: 1493734867665740882}
   - component: {fileID: 6897552954196723554}
   - component: {fileID: 98098123023502530}
   - component: {fileID: 5188484940777576898}
@@ -111,7 +111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6897552954196723555}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4804393, y: -4.51, z: -27.126635}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6897552953744637450}
@@ -139,8 +139,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &6897552954196723553
-BoxCollider2D:
+--- !u!58 &1493734867665740882
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -152,19 +152,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.015974045, y: -0.015974045}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.7444153, y: 0.9680519}
-  m_EdgeRadius: 0
+  m_Radius: 0.45
 --- !u!114 &6897552954196723554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +182,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalHealthPoints: 100
   coinPrefab: {fileID: 5589486848178474808, guid: 384ed94a886e5ac498032edaa452a694,
+    type: 3}
+  bonePrefab: {fileID: 4429182079703537988, guid: 96f53555d2c5f24479a1e117b312f8ab,
     type: 3}
 --- !u!114 &5188484940777576898
 MonoBehaviour:
