@@ -9,6 +9,8 @@ public class PlayerAttack : MonoBehaviour
     private GameObject attackPrefab;
     [SerializeField]
     private float speed;
+    [SerializeField]
+    private float cooldown = 0.5f;
     private bool hasShoot;
 
     void Awake()
@@ -59,7 +61,7 @@ public class PlayerAttack : MonoBehaviour
     {
         hasShoot = true;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(cooldown);
 
         hasShoot = false;
     }
