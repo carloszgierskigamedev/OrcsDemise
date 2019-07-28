@@ -9,10 +9,11 @@ public class PlayerAttack : MonoBehaviour
     private GameObject attackPrefab;
     [SerializeField]
     private float speed;
+    private bool hasShoot;
 
-    void Start()
+    void Awake()
     {
-        Vector3 playerPosition = transform.position;
+        hasShoot = false;
     }
 
     void Update()
@@ -25,26 +26,42 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) 
         {
 
-            Debug.DrawLine(playerPosition, mousePosition, Color.red, 2.5f);
+            if (hasShoot == false) 
+            {
 
-            Vector2 direction = mousePosition - playerPosition;
+                Debug.DrawLine(playerPosition, mousePosition, Color.red, 2.5f);
 
-            direction.Normalize();
+                Vector2 direction = mousePosition - playerPosition;
 
-            Vector2 attackBornLocation = (Vector2)playerPosition + (direction * 1.2f);
+                direction.Normalize();
 
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                Vector2 attackBornLocation = (Vector2)playerPosition + (direction * 1.2f);
 
-            Quaternion rotation = Quaternion.Euler(0f,0f, angle);
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-            GameObject attack = Instantiate(attackPrefab, attackBornLocation, rotation);
+                Quaternion rotation = Quaternion.Euler(0f,0f, angle);
 
-            Rigidbody2D rigidbody2d = attack.GetComponent<Rigidbody2D>();
+                GameObject attack = Instantiate(attackPrefab, attackBornLocation, rotation);
 
-            rigidbody2d.velocity = direction * speed;
+                Rigidbody2D rigidbody2d = attack.GetComponent<Rigidbody2D>();
+
+                rigidbody2d.velocity = direction * speed;
+
+                StartCoroutine(AttackCooldown());
+                
+            }
 
         }
 
+    }
+
+    IEnumerator AttackCooldown() 
+    {
+        hasShoot = true;
+
+        yield return new WaitForSeconds(0.5f);
+
+        hasShoot = false;
     }
 
 }
