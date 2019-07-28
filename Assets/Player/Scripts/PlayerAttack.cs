@@ -31,7 +31,7 @@ public class PlayerAttack : MonoBehaviour
 
             direction.Normalize();
 
-            Vector2 attackBornLocation = (Vector2)playerPosition + direction;
+            Vector2 attackBornLocation = (Vector2)playerPosition + (direction * 1.2f);
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 

@@ -6,6 +6,8 @@ public class ProjectileCollision : MonoBehaviour
 {
 
     [SerializeField]
+    private GameObject explosionPrefab;
+    [SerializeField]
     private float attackDamage;
 
     void Start()
@@ -25,6 +27,8 @@ public class ProjectileCollision : MonoBehaviour
         {
             enemyHealth.DealDamage(attackDamage);
         }
+
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
         Destroy(this.gameObject);
 

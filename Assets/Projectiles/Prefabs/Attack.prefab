@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8820265776190483995}
   - component: {fileID: 1033072981707260156}
   - component: {fileID: 4756442326064752308}
+  - component: {fileID: 5560537958777219216}
   - component: {fileID: 8562598940718022522}
   m_Layer: 0
   m_Name: Attack
@@ -62,7 +63,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3648521139186694778}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -83,6 +84,22 @@ PolygonCollider2D:
     - - {x: 0.3, y: 0}
       - {x: -0.17, y: 0.3}
       - {x: -0.17, y: -0.3}
+--- !u!58 &5560537958777219216
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3648521139186694778}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.4
 --- !u!114 &8562598940718022522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,6 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e4563675ec22d41ab43693bef74759, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 8094461114641814521, guid: 5c9e92d911828124baac4764f734a244,
+    type: 3}
   attackDamage: 20
 --- !u!1 &9037295617628939142
 GameObject:
