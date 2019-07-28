@@ -191,6 +191,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalHealthPoints: 100
+  coinPrefab: {fileID: 5589486848178474808, guid: 384ed94a886e5ac498032edaa452a694,
+    type: 3}
 --- !u!114 &5188484940777576898
 MonoBehaviour:
   m_ObjectHideFlags: 0

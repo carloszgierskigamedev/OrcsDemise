@@ -7,6 +7,8 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField]
     private float totalHealthPoints;
+    [SerializeField]
+    private GameObject coinPrefab;
     private float currentHealthPoints;
 
     private SpriteRenderer spriteRenderer;
@@ -16,6 +18,8 @@ public class EnemyHealth : MonoBehaviour
     private Color originalColor;
 
     private Coroutine displayCycleCoroutine;
+
+    private int coinsToSpawn;
 
     void Awake()
     {
@@ -40,8 +44,16 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealthPoints <= 0) 
         {
 
+            coinsToSpawn = Random.Range(0,4);
+            
             Destroy(this.gameObject);
-
+            
+            for (int i = 0; i < coinsToSpawn; i++) 
+            {
+               
+                GameObject coins = Instantiate(coinPrefab,transform.position, Quaternion.identity);
+            
+            }
         }
         else
         {
