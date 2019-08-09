@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 2590137560397283735}
   - component: {fileID: 8705204934514550568}
   - component: {fileID: 1056813462927939205}
+  - component: {fileID: 3180577314061974149}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -199,3 +200,15 @@ MonoBehaviour:
   totalHealthPoints: 100
   stopTime: 0.3
   impulseForce: 7
+--- !u!114 &3180577314061974149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2590137560397283739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9940c37f69f54d7469aec5138c6c9fbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

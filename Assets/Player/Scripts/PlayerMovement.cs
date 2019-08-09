@@ -36,18 +36,5 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
-    // eu tentando fazer pegar as coins mas não consegui passar disso, pensei em talvez colocar um script nas coins chamado CoinCatcher ou algo do tipo. @_@
-    // void OnCollisionEnter2D(Collision2D col)
-    // {
-    //     CoinPrefab coinPrefab = col.gameObject.GetComponent<CoinPrefab>();
-
-    //     if (col.gameObject.name=="coinPrefab")
-    //     {
-
-    //         Debug.Log("coin");
-
-    //     }
-
-    // }
 
 }

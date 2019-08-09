@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Projectile
   - New tag
+  - Coin
   layers:
   - Default
   - TransparentFX
