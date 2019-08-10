@@ -6,13 +6,13 @@ public class PlayerPoints : MonoBehaviour
 {
 
     private int points;
-    // private HUDPoints hUDPoints;
+    private HUDPoints hudPoints;
 
 
     void Start()
     {
         points = 0;
-        // hUDPoints = GameObject.FindObjectOfType<HUDPoints>();
+        hudPoints = GameObject.FindObjectOfType<HUDPoints>();
     }
 
     void Update()
@@ -29,8 +29,7 @@ public class PlayerPoints : MonoBehaviour
 
             Destroy(col.gameObject);
             points += 1;
-            Debug.Log(points);
-            // hUDPoints.points += 1;
+            hudPoints.points += 1;
 
 
         }

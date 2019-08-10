@@ -1,27 +1,24 @@
-﻿// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-// using UnityEngine.UI;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
-// public class HUDPoints : MonoBehaviour
-// {
-//     [SerializeField]
-//     private GameObject coinPrefab;
+public class HUDPoints : MonoBehaviour
+{
+    public int points;
 
-//     public int points;
+    [SerializeField]
+    private TextMeshProUGUI pointsText;
 
-//     [SerializeField]
-//     // private TextMeshPro pointsText;
+    void Start()
+    {
+        points = 0;
+    }
 
-//     void Start()
-//     {
-//         // points = 0;
-//         // GameObject coinCreated = Instantiate(coinPrefab);
-//     }
-
-//     // Update is called once per frame
-//     void Update()
-//     {
-//         // pointsText.text = ("" + points);
-//     }
-// }
+    // Update is called once per frame
+    void Update()
+    {
+        pointsText.text = ("Points: " + points);
+    }
+}
