@@ -16,7 +16,6 @@ public class HUDPoints : MonoBehaviour
         points = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         pointsText.text = ("Points: " + points);
