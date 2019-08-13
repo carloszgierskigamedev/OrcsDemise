@@ -11,6 +11,8 @@ public class EnemyHealth : MonoBehaviour
     private GameObject coinPrefab;
     [SerializeField]
     private GameObject bonePrefab;
+    [SerializeField]
+    private int coinSpeed;
     private float currentHealthPoints;
 
     private SpriteRenderer spriteRenderer;
@@ -66,9 +68,9 @@ public class EnemyHealth : MonoBehaviour
         
         for (int i = 0; i < coinsToSpawn; i++) 
         {
-            
             GameObject coins = Instantiate(coinPrefab,transform.position, Quaternion.identity);
-        
+            Rigidbody2D rigidBody2DCoin = coins.GetComponent<Rigidbody2D>();
+            rigidBody2DCoin.AddForce(Random.insideUnitCircle * coinSpeed);
         }
     }
 
