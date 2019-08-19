@@ -9,8 +9,10 @@ public class PlayerAttack : MonoBehaviour
     private GameObject attackPrefab;
     [SerializeField]
     private float speed;
+    public float Speed { get { return speed; } set {speed = value;}}
     [SerializeField]
     private float cooldown = 0.5f;
+    public float Cooldown { get { return cooldown; } set {cooldown = value;}}
     private bool hasShoot;
 
     void Awake()

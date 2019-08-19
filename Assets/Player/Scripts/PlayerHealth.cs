@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
     Vector3 playerPosition;
     
     public float TotalHealthPoints { get { return totalHealthPoints; } }
-    public float CurrentHealthPoints { get { return currentHealthPoints; } }
+    public float CurrentHealthPoints { get { return currentHealthPoints; } set { currentHealthPoints = value; } }
 
     void Awake()
     {

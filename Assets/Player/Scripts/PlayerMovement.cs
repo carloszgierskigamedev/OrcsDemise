@@ -7,8 +7,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rigidbody2d;
 
     [SerializeField]
-    private float speed; 
-    public float Speed { get { return speed; } }
+    private float speed;
+    public float Speed { get { return speed; } set {speed = value;}}
 
     void Awake()
     {
