@@ -13,13 +13,17 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private float impulseForce;
     private float currentHealthPoints;
+    private bool isShielded;
     Rigidbody2D rigidbody2d;
     PlayerMovement playerMovement;
     PlayerAttack playerAttack;
     Vector3 playerPosition;
+
     
     public float TotalHealthPoints { get { return totalHealthPoints; } }
     public float CurrentHealthPoints { get { return currentHealthPoints; } set { currentHealthPoints = value; } }
+    public bool IsShielded { get { return isShielded; } set { isShielded = value; } }
+
 
     void Awake()
     {
@@ -32,7 +36,6 @@ public class PlayerHealth : MonoBehaviour
 
         rigidbody2d = GetComponent<Rigidbody2D>();
 
-
     }
 
     void Update()
@@ -42,6 +45,13 @@ public class PlayerHealth : MonoBehaviour
 
     public void DealDamage(float attackDamage, Vector3 enemyPosition)
     {
+
+        if (isShielded)
+        {
+            isShielded = false;
+            return;
+        }
+
         currentHealthPoints -= attackDamage;
         StartCoroutine(FreezeMovementAndAttack(enemyPosition));
 

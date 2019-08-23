@@ -18,7 +18,6 @@ public class MoveSpeedIncrease : PowerUp
         playerMovement.Speed = 12;
         yield return new WaitForSeconds(duration); 
         playerMovement.Speed = 8;
-
     }
 
 }

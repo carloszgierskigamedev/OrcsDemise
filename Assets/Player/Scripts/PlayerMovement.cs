@@ -13,12 +13,10 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
-
     }
 
     void Update() 
     {
-
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -27,14 +25,6 @@ public class PlayerMovement : MonoBehaviour
         direction.Normalize();
 
         rigidbody2d.velocity = direction * speed;
-
-    }
-
-    void FixedUpdate()
-    {
-
-
-
     }
 
 }
